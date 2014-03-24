@@ -167,7 +167,7 @@ namespace Enterprises.Test
 
 
         /// <summary>
-        ///GetFile 的测试
+        ///GetFile 的测试(姚立峰)
         ///</summary>
         [TestMethod()]
         public void GetFileTest()
@@ -177,8 +177,6 @@ namespace Enterprises.Test
             var filePri=target.GetFile(path);
             var name = filePri.GetName();
             var site = filePri.GetSize();
-
-
             TestContext.WriteLine(string.Format("{0},{1}", name, site));
         }
     }
