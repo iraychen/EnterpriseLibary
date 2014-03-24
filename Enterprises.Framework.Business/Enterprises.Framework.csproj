@@ -80,6 +80,7 @@
     <Compile Include="Utility\Hash.cs" />
     <Compile Include="Utility\HttpRequestExtensions.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
+    <Compile Include="Utility\ReflectionUtil.cs" />
     <Compile Include="Utility\RouteValueDictionaryExtensions.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
     <Compile Include="Plugin\VerifyImage\IVerifyImage.cs" />
