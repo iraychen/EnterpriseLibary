@@ -177,6 +177,8 @@ namespace Enterprises.Test
             var filePri=target.GetFile(path);
             var name = filePri.GetName();
             var site = filePri.GetSize();
+
+
             TestContext.WriteLine(string.Format("{0},{1}", name, site));
         }
     }
