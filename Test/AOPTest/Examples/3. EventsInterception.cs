@@ -70,7 +70,7 @@ namespace Example3
             Console.WriteLine();
 
             Console.WriteLine("Behavior WITH interception");
-            var actor1 = (IActor)AOP.Factory.Create<Actor>();
+            var actor1 = (IActor)AOP.AopFactory.Create<Actor>();
             actor1.IAmActing += new EventHandler<EventArgs>(actor1_IAmActing);
             actor1.Name = "Mickey Rourke";
             actor1.Act();

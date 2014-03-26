@@ -33,8 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Refrences\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework.testcasestorage">
+      <HintPath>..\packages\Nunit.Framework.TestCaseStorage.1.0.1\lib\nunit.framework.testcasestorage.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -60,11 +70,14 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logging\LoggerTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Utility\FileSystemStorageProviderTest.cs" />
     <Compile Include="Utility\HashTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ReflectionUtilTest.cs" />
+    <Compile Include="Utility\ReflectOnTests.cs" />
+    <Compile Include="Utility\ReflectTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Enterprises.Framework.Business\Enterprises.Framework.csproj">
@@ -75,6 +88,9 @@
       <Project>{FDBB331E-798F-4582-A2C3-5DC2D9D5F89D}</Project>
       <Name>Enterprises.Test.Bussiness</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -61,11 +61,11 @@ namespace Example1
             Console.WriteLine();
 
             Console.WriteLine("Behaviour WITH interception and a provided Name ('Mickey Rourke')");
-            var actor3 = (IActor)AOP.Factory.Create<Actor>("Mickey Rourke");
+            var actor3 = (IActor)AOP.AopFactory.Create<Actor>("Mickey Rourke");
             Console.WriteLine("Actor {0} is mounted", actor3.Name);
             Console.WriteLine();
             Console.WriteLine("Behavior WITH interception and no provided Name");
-            var actor4 = (IActor)AOP.Factory.Create<Actor>("");
+            var actor4 = (IActor)AOP.AopFactory.Create<Actor>("");
             Console.WriteLine("Actor {0} is mounted", actor4.Name);
         }
 

@@ -40,7 +40,7 @@ namespace Example4
         public void RunExample()
         {
             Console.WriteLine("Behavior WITH interception");
-            var actor1 = AOP.Factory.Create<Actor>();
+            var actor1 = AOP.AopFactory.Create<Actor>();
             Console.WriteLine();
         }
 

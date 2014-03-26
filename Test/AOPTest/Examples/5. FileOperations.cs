@@ -43,7 +43,7 @@ namespace Example5
             Console.WriteLine();
 
             Console.WriteLine("Behavior with interception");
-            var file = (IFile)AOP.Factory.Create(typeof(File));
+            var file = (IFile)AOP.AopFactory.Create(typeof(File));
             res = file.ReadAllLines(path);
             foreach (string s in res) Console.WriteLine(s);
         }

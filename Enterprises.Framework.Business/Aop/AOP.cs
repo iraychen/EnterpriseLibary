@@ -83,7 +83,10 @@ namespace Enterprises.Framework
             if (!this.Contains(joinPoint)) this.Add(joinPoint);
         }
 
-        public static class Factory
+        /// <summary>
+        /// AopFactory
+        /// </summary>
+        public static class AopFactory
         {
             public static object Create(Type targetType)
             {
