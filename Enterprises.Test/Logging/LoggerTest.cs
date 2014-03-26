@@ -18,20 +18,23 @@ namespace Enterprises.Test.Logging
             Castle.Core.Logging.ILoggerFactory cLoggerFactory = new OrchardLog4netFactory(hostEnvironment);
             Framework.Plugin.Logging.ILoggerFactory loggerFactory = new CastleLoggerFactory(cLoggerFactory);
             ILogger log = loggerFactory.CreateLogger(typeof(CastleLogger));
-
-            log4net.Config.BasicConfigurator.Configure(new MemoryAppender());
-
-            Assert.That(log, Is.Not.Null);
-
-            MemoryAppender.Messages.Clear();
+            
+            log4net.Config.XmlConfigurator.Configure();
             log.Error("-boom{0}-", 42);
-            Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("-boom42-"));
-
-            MemoryAppender.Messages.Clear();
             log.Warning(new ApplicationException("problem"), "crash");
-            Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("problem"));
-            Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("crash"));
-            Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("ApplicationException"));
+            // log4net记录在内存中
+            //log4net.Config.BasicConfigurator.Configure(new MemoryAppender());
+            //Assert.That(log, Is.Not.Null);
+
+            //MemoryAppender.Messages.Clear();
+            //log.Error("-boom{0}-", 42);
+            //Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("-boom42-"));
+
+            //MemoryAppender.Messages.Clear();
+            //log.Warning(new ApplicationException("problem"), "crash");
+            //Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("problem"));
+            //Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("crash"));
+            //Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("ApplicationException"));
 
 
         }
