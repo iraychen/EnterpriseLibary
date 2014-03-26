@@ -16,7 +16,7 @@ namespace Enterprises.Test
     {
 
 
-        private TestContext testContextInstance;
+        private TestContext _testContextInstance;
 
         /// <summary>
         ///获取或设置测试上下文，上下文提供
@@ -26,11 +26,11 @@ namespace Enterprises.Test
         {
             get
             {
-                return testContextInstance;
+                return _testContextInstance;
             }
             set
             {
-                testContextInstance = value;
+                _testContextInstance = value;
             }
         }
 

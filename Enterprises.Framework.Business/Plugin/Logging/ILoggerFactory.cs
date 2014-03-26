@@ -1,12 +1,10 @@
-﻿namespace Enterprises.Framework.Plugin.Logging
-{
-    using System;
+﻿using System;
 
+namespace Enterprises.Framework.Plugin.Logging {
     /// <summary>
     /// 
     /// </summary>
-    public interface ILoggerFactory
-    {
+    public interface ILoggerFactory {
         /// <summary>
         /// 
         /// </summary>
@@ -15,4 +13,3 @@
         ILogger CreateLogger(Type type);
     }
 }
-
