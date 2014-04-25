@@ -6,6 +6,27 @@ using System.Reflection;
 using Autofac;
 using Autofac.Core;
 using Module = Autofac.Module;
+/*
+LoggingModule也是一个Autofac模块。它以属性注入的方式给需要日志服务的对象设置Logger。
+
+如果一个类有ILogger型的公共可写实例属性(忽略索引)，Autofac容器在解析(Resolve)该类的时候，将"注入"一个ILogging实现类的实例。Orchard默认会注入一个CastleLogger对象。当然Orchard也允许一个类中有多个ILogger型属性，也支持将CastleLogger替换成其他Logger。
+
+如有必要，请先了解一下简单工厂模式、抽象工厂模式和适配器模式(对象适配器模式)。CastleLoggerFactory工厂负责创建CastleLogger对象，而CastleLoggerFactory适配了OrchardLog4netFactory；CastleLogger实际上适配的是OrchardLog4netLogger；OrchardLog4netLogger又适配了log4net.Core.ILogger——也就是说CastleLogger是log4net.Core.ILogger经过层层包装的结果。
+如果有类TestContrller,其有一个ILogger属性，注入流程如下：
+1、Autofac容器创建TestController类的实例instance;
+2、检查instance是否有一个ILogger型的公共可写实例属性。如果有（有可能还不只一个）则进入步骤3，否则以下步骤不没必要进行了;
+3、从缓存中获取TestController类型对应的Logger，如果获取成功进入步骤6;
+4、从Autofac容器获取ILogger：
+从容器中获取CastleLoggerFactory
+->CastleLoggerFactory创建ILogger对象
+->交由OrchardLog4netFactory创建OrchardLog4netLogger
+->交由log4net.LogManager.GetLogger创建一个log4net.Core.ILogger对象
+->log4net.Core.ILogger对象适配成OrchardLog4netLogger对象
+->OrchardLog4netLogger适配成CastleLogger对象
+->CastleLoggerFactory最终返回一个CastleLogger对象
+5、缓存Logger
+6、将Logger注入对应的属性。
+ */
 
 namespace Enterprises.Framework.Plugin.Logging
 {

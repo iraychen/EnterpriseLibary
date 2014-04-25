@@ -18,6 +18,7 @@ namespace SerializerSample
             return Convert.ToBase64String(base64bytes);
         }
 
+
         /// <summary>
         /// 将Base64编码的数据转化成字符串。
         /// </summary>
@@ -26,6 +27,8 @@ namespace SerializerSample
         public static string Decode(string base64String)
         {
             byte[] bytes = Convert.FromBase64String(base64String);
+
+
             return Encoding.UTF8.GetString(bytes, 0, bytes.Length);
         }
     }
