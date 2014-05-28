@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Enterprises.Framework.Utility;
+
 
 namespace SerializerSample
 {

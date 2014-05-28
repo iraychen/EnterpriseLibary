@@ -9,7 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Xml.Serialization;
 
-namespace SerializerSample
+namespace Enterprises.Framework.Utility
 {
     /// <summary>
     /// 序列化帮助类

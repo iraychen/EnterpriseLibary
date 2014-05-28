@@ -4,13 +4,11 @@ using System.IO;
 using System.Linq.Expressions;
 using System.Text;
 using Enterprises.Framework.Services;
-using Microsoft.Pex.Framework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Enterprises.Framework.WindowsServer
 {
-    [TestClass, PexClass]
-    public partial class SysDataToDataBase : ICommand
+   public partial class SysDataToDataBase : ICommand
     {
         public void Execute()
         {

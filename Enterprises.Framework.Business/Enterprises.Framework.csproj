@@ -51,6 +51,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceProcess" />
@@ -98,6 +99,7 @@
     <Compile Include="AjaxFramework\WebHandler\WebRequestDecoder.cs" />
     <Compile Include="AjaxFramework\WebHandler\WebResponseEncoder.cs" />
     <Compile Include="Plugin\Email\EmailHelper.cs" />
+    <Compile Include="Utility\Byte64.cs" />
     <Compile Include="Utility\EntityUtil.cs" />
     <Compile Include="Utility\FileSystems\FileSystemStorageProvider.cs" />
     <Compile Include="Utility\FileSystems\IStorageFile.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Utility\ReflectionUtil.cs" />
     <Compile Include="Utility\ReflectOn.cs" />
     <Compile Include="Utility\RouteValueDictionaryExtensions.cs" />
+    <Compile Include="Utility\SerializeHelper.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
     <Compile Include="Plugin\VerifyImage\IVerifyImage.cs" />
     <Compile Include="Plugin\VerifyImage\VerifyImage.cs" />

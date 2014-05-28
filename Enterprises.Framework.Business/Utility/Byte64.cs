@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SerializerSample
+namespace Enterprises.Framework.Utility
 {
     public class Base64
     {
