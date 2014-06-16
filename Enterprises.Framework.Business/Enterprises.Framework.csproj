@@ -106,6 +106,7 @@
     <Compile Include="Utility\FileSystems\IStorageFolder.cs" />
     <Compile Include="Utility\FileSystems\IStorageProvider.cs" />
     <Compile Include="Utility\Hash.cs" />
+    <Compile Include="Utility\HttpPostHelper.cs" />
     <Compile Include="Utility\HttpRequestExtensions.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
     <Compile Include="Utility\Reflect.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Utility\ReflectOn.cs" />
     <Compile Include="Utility\RouteValueDictionaryExtensions.cs" />
     <Compile Include="Utility\SerializeHelper.cs" />
+    <Compile Include="Utility\StreamUtility.cs" />
     <Compile Include="Utility\StringExtensions.cs" />
     <Compile Include="Plugin\VerifyImage\IVerifyImage.cs" />
     <Compile Include="Plugin\VerifyImage\VerifyImage.cs" />
