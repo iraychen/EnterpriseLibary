@@ -105,9 +105,11 @@
     <Compile Include="Utility\FileSystems\IStorageFile.cs" />
     <Compile Include="Utility\FileSystems\IStorageFolder.cs" />
     <Compile Include="Utility\FileSystems\IStorageProvider.cs" />
+    <Compile Include="Utility\FileUtility.cs" />
     <Compile Include="Utility\Hash.cs" />
     <Compile Include="Utility\HttpPostHelper.cs" />
     <Compile Include="Utility\HttpRequestExtensions.cs" />
+    <Compile Include="Utility\ImageUtility.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
     <Compile Include="Utility\Reflect.cs" />
     <Compile Include="Utility\ReflectionUtil.cs" />
