@@ -101,5 +101,37 @@ namespace Enterprises.Framework.Utility
             var displayNameAttribute = TypeDescriptor.GetProperties(modelType)[propertyName].Attributes[typeof(T)] as T;
             return displayNameAttribute != null;
         }
+
+
+        /// <summary>
+        /// 判断相关对象是否修改
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="old"></param>
+        /// <param name="current"></param>
+        /// <returns></returns>
+        public static Dictionary<string, bool> IsUpdate<T>(T old, T current)
+        {
+            //Model.PerFileHistory history = new Model.PerFileHistory();
+            //Model.Atrributes.ModifyFields atrr = null;
+            var result = new Dictionary<string, bool>();
+            Type type = typeof(T);
+            PropertyInfo[] propertys = type.GetProperties();
+            foreach (PropertyInfo property in propertys)
+            {
+                if (property.PropertyType.IsValueType || property.PropertyType.Name == "String")
+                {
+
+                    object o1 = property.GetValue(old, null); //以前的值
+                    object o2 = property.GetValue(current, null); //修改后的值
+                    string str1 = o1 == null ? string.Empty : o1.ToString();
+                    string str2 = o2 == null ? string.Empty : o2.ToString();
+                    //判断两者是否相同，不同则插入历史表中
+                    result.Add(property.Name, !str1.Equals(str2));
+                }
+            }
+
+            return result;
+        }
     }
 }

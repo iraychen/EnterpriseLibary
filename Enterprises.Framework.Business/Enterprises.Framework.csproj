@@ -72,6 +72,10 @@
     <Compile Include="AOP2\IContextProperty.cs" />
     <Compile Include="Aop\AOP.cs" />
     <Compile Include="AjaxFramework\NamedProperty.cs" />
+    <Compile Include="Entity\BinarySerializeCollection.cs" />
+    <Compile Include="Entity\KeyValueItem.cs" />
+    <Compile Include="Entity\KeyValueItemCollection.cs" />
+    <Compile Include="Entity\KeyValueItemCollectionWrap.cs" />
     <Compile Include="Plugin\Email\ISmtpMail.cs" />
     <Compile Include="Plugin\Email\SmtpEmailAttribute.cs" />
     <Compile Include="Plugin\Email\SmtpMail.cs" />

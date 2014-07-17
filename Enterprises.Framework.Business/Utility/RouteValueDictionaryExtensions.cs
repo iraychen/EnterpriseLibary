@@ -7,7 +7,7 @@
     using System.Web.Routing;
 
     /// <summary>
-    /// 
+    /// 路由映射
     /// </summary>
     public static class RouteValueDictionaryExtensions
     {
@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// 
+        ///  合并路由
         /// </summary>
         /// <param name="dictionary"></param>
         /// <param name="values"></param>
@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// 
+        /// 合并路线
         /// </summary>
         /// <param name="dictionary"></param>
         /// <param name="dictionaryToMerge"></param>

@@ -3,6 +3,9 @@
 
     #region 邮件收发代码接口
 
+    /// <summary>
+    /// 邮件对象
+    /// </summary>
     public interface ISmtpMail
     {
         /// <summary>

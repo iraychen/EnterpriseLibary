@@ -53,4 +53,27 @@ namespace Enterprises.Test.Bussiness
         [Description("审核失败")]
         ApploveCancal = 6
     }
+
+    public class Agent
+    {
+        public Guid ID { get; set; }
+        public string AgentName { get; set; }
+        public bool Sex { get; set; }
+        public string Fax { get; set; }
+        public string Email { get; set; }
+        public string Address { set; get; }
+        public string MainDirection { set; get; }
+        public Guid CreateID { get; set; }
+        public Guid ModifyID { get; set; }
+        public DateTime CreateTime { get; set; }
+        public DateTime ModifyTime { get; set; }
+        public List<Products> Products { get; set; }
+    }
+
+    public class Products
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Code { get; set; }
+    }
 }
