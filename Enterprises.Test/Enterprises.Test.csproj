@@ -82,6 +82,7 @@
     <Compile Include="Utility\ReflectionUtilTest.cs" />
     <Compile Include="Utility\ReflectOnTests.cs" />
     <Compile Include="Utility\ReflectTests.cs" />
+    <Compile Include="Utility\JsonHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Enterprises.Framework.Business\Enterprises.Framework.csproj">
