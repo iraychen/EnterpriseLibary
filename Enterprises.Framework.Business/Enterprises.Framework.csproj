@@ -116,6 +116,7 @@
     <Compile Include="Utility\HttpRequestExtensions.cs" />
     <Compile Include="Utility\ImageUtility.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
+    <Compile Include="Utility\NumberUtility.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
     <Compile Include="Utility\Reflect.cs" />
     <Compile Include="Utility\ReflectionUtil.cs" />
