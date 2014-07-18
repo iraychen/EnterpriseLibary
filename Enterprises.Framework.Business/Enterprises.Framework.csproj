@@ -104,6 +104,7 @@
     <Compile Include="AjaxFramework\WebHandler\WebResponseEncoder.cs" />
     <Compile Include="Plugin\Email\EmailHelper.cs" />
     <Compile Include="Utility\Byte64.cs" />
+    <Compile Include="Utility\DateTimeHelper.cs" />
     <Compile Include="Utility\EntityUtil.cs" />
     <Compile Include="Utility\FileSystems\FileSystemStorageProvider.cs" />
     <Compile Include="Utility\FileSystems\IStorageFile.cs" />
