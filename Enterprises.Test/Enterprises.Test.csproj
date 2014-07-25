@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Logging\LoggerTest.cs" />
     <Compile Include="UnitTest1.cs" />
+    <Compile Include="Utility\ConfigText.cs" />
     <Compile Include="Utility\FileSystemStorageProviderTest.cs" />
     <Compile Include="Utility\HashTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ConfigText.config" />
     <None Include="Logging\log4net.config" />
     <None Include="packages.config" />
+    <None Include="Enterprises.Framework.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
