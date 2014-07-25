@@ -150,6 +150,7 @@ namespace Test
             #region Word书签转换
             var wordConvert=new WordConvert();
             wordConvert.WordConvertTest();
+            Console.WriteLine("word 书签转换成功.");
             #endregion
             Console.ReadLine();
         }
