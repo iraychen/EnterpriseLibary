@@ -5,9 +5,26 @@ using System.Data;
 
 namespace Enterprises.Framework.Plugin.Office.Converters
 {
+    /* 在目标数据库创建表
+     CREATE TABLE [dbo].[Document](
+	[ID] [uniqueidentifier] NOT NULL,
+	[TemplateName] [nvarchar](200) NOT NULL,
+	[OutputType] [int] NOT NULL,
+	[DataSource] [nvarchar](max) NOT NULL,
+	[DocumentAddress] [nvarchar](200) NULL,
+	[Status] [int] NOT NULL,
+	[InfoMessage] [nvarchar](max) NULL,
+	[CreateTime] [datetime] NOT NULL,
+     CONSTRAINT [PK_Document] PRIMARY KEY CLUSTERED 
+    (
+	    [ID] ASC
+    )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+    ) ON [PRIMARY]
+     */
     /// <summary>
     ///  文档保存数据库操作
     /// </summary>
+    
     public class DocumentDal
     {
         private static readonly string ConnectionString;
@@ -17,7 +34,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
         {
             try
             {
-                ConnectionString = GlobalConfig.ConnectionString;
+                ConnectionString = DocumentConvertConfig.ConnectionString;
             }
             catch(Exception ex)
             {

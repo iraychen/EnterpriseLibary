@@ -4,6 +4,9 @@ using Newtonsoft.Json.Linq;
 
 namespace Enterprises.Framework.Plugin.Office.Converters
 {
+    /// <summary>
+    ///  文档保存数据库服务
+    /// </summary>
     public class DocumentService
     {
         private static readonly DocumentService _instance;

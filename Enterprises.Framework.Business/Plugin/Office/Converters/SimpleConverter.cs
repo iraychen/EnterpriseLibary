@@ -17,7 +17,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
             object missing = Type.Missing,
                 visible = false,
                 documentType = Microsoft.Office.Interop.Word.WdDocumentType.wdTypeDocument,
-                fileName = Path.Combine(GlobalConfig.TemplatePath, doc.TemplateName),
+                fileName = Path.Combine(DocumentConvertConfig.TemplatePath, doc.TemplateName),
                 objFalse = false;
             Microsoft.Office.Interop.Word.Application wordApp = new Microsoft.Office.Interop.Word.ApplicationClass();
             WriteLog("启动word程序！");
@@ -61,7 +61,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
                 using (var target = new Model.Document(document))
                 {
                     target.Instantiate(dataSource);
-                    string path = Path.Combine(GlobalConfig.OutputPath, doc.ID.ToString());
+                    string path = Path.Combine(DocumentConvertConfig.OutputPath, doc.ID.ToString());
                     WriteLog("保存文件!");
                     target.Save(path, (OutputType)doc.OutputType);
                     doc.DocumentAddress = path;

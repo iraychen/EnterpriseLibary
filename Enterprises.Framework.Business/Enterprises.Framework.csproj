@@ -102,14 +102,19 @@
     <Compile Include="Plugin\Logging\OrchardFileAppender.cs" />
     <Compile Include="Plugin\Logging\OrchardLog4netFactory.cs" />
     <Compile Include="Plugin\Logging\OrchardLog4netLogger.cs" />
+    <Compile Include="Plugin\Office\Converters\DocumentConvert.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Plugin\Office\Converters\DocumentConvert.designer.cs">
+      <DependentUpon>DocumentConvert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Office\Converters\DocumentEntity.cs" />
     <Compile Include="Plugin\Office\Converters\DocumentConverter.cs" />
     <Compile Include="Plugin\Office\Converters\DocumentDAL.cs" />
     <Compile Include="Plugin\Office\Converters\DocumentService.cs" />
     <Compile Include="Plugin\Office\Converters\DTOJsonConverter.cs" />
-    <Compile Include="Plugin\Office\Converters\Enums.cs" />
-    <Compile Include="Plugin\Office\Converters\GlobalConfig.cs" />
-    <Compile Include="Plugin\Office\Converters\GlobalSuppressions.cs" />
+    <Compile Include="Plugin\Office\Converters\DocumentEnums.cs" />
+    <Compile Include="Plugin\Office\Converters\DocumentConvertConfig.cs" />
     <Compile Include="Plugin\Office\Converters\IConverter.cs" />
     <Compile Include="Plugin\Office\Converters\Model\Bookmark.cs" />
     <Compile Include="Plugin\Office\Converters\Model\DataItem.cs" />
@@ -165,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AjaxFramework\WebHandler\net.js" />
+    <EmbeddedResource Include="Plugin\Office\Converters\DocumentConvert.resx">
+      <DependentUpon>DocumentConvert.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interface\" />

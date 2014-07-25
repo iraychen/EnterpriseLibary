@@ -16,11 +16,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer)
         {
-            DataSource dataSource = existingValue as DataSource;
-            if (dataSource == null)
-            {
-                dataSource = new DataSource();
-            }
+            DataSource dataSource = existingValue as DataSource ?? new DataSource();
 
             JObject obj = JObject.Load(reader);
             serializer.Converters.Add(new DataItemJsonConverter());
@@ -33,7 +29,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
 
         public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
         {
-            DataSource dataSource = value as DataSource;
+            var dataSource = value as DataSource;
             if (dataSource != null)
             {
                 serializer.Converters.Add(new DataItemJsonConverter());
@@ -75,7 +71,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
 
         public override void WriteJson(JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer)
         {
-            DataItem data = value as DataItem;
+            var data = value as DataItem;
             if (data != null)
             {
                 writer.WriteStartObject();

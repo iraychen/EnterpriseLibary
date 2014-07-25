@@ -23,9 +23,9 @@ namespace Enterprises.Framework.Plugin.Office.Converters
 
         protected void WriteLog(string message)
         {
-            if (GlobalConfig.LogEnabled)
+            if (DocumentConvertConfig.LogEnabled)
             {
-                File.AppendAllText(GlobalConfig.LogFile, message + "\r\n");
+                File.AppendAllText(DocumentConvertConfig.LogFile, message + "\r\n");
             }
         }
 

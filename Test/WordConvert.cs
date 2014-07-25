@@ -104,9 +104,15 @@ namespace Test
                     OutputType = (int) (OutputType.PDF | OutputType.Word),
                     DataSource = s
                 };
-
+            
+            // 测试文档转换
             var converter = new SimpleConverter();
             converter.Convert(doc);
+
+            // 再生产环境可以调用如下语句直接加入数据库，然后增加文档转换服务自定转换
+            //DocumentService.Instance.AddDocument(doc);
+            //Enterprises.Framework.Plugin.Office.Converters.DocumentConvert service = new Enterprises.Framework.Plugin.Office.Converters.DocumentConvert();
+            //service.Process();
         }
     }
 }

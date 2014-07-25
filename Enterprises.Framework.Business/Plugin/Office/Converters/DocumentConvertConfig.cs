@@ -6,7 +6,7 @@ namespace Enterprises.Framework.Plugin.Office.Converters
     /// <summary>
     /// 文档转换配置文件
     /// </summary>
-    public class GlobalConfig
+    public class DocumentConvertConfig
     {
         /// <summary>
         /// 日志文件
