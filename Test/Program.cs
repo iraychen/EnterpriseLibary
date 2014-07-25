@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Data.SqlClient;
 using System.Data;
 using Enterprises.Framework;
+using Enterprises.Framework.Plugin.Office;
 
 
 namespace Test
@@ -122,8 +123,33 @@ namespace Test
             //yuTu3.Print();
             #endregion
 
-            #region
-           
+            #region Word操作
+            //var missing = Type.Missing;
+            //var wordHelper = new WordHelper();
+            //try
+            //{
+            //    var isOpen = wordHelper.OpenAndActive(@"D:\yibiyi\FileRoot\销售合同模板-安全.docx", false, false);
+            //    if (isOpen)
+            //    {
+            //        wordHelper.ReplaceBookMark("ContractCode", "合同编号");
+            //    }
+            //    wordHelper.SavePdf("text1",@"D:\yibiyi\FileRoot");
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("word 保存成功.");
+            //    wordHelper.Close();
+            //}
+            
+            #endregion
+
+            #region Word书签转换
+            var wordConvert=new WordConvert();
+            wordConvert.WordConvertTest();
             #endregion
             Console.ReadLine();
         }

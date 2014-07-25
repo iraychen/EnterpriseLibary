@@ -236,6 +236,8 @@
     <Content Include="nunit\pnunit.framework.dll" />
     <Content Include="nunit\pnunit.tests.dll" />
     <Content Include="nunit\runFile.exe" />
+    <Content Include="Office\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="Office\Microsoft.Office.Interop.Word.xml" />
     <Content Include="sharpziplib\ICSharpCode.SharpZipLib.dll" />
     <Content Include="sharpziplib\license.txt" />
     <Content Include="specflow\changelog.txt" />
