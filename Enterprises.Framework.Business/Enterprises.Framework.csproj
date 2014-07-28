@@ -42,6 +42,9 @@
     <Reference Include="Castle.DynamicProxy2">
       <HintPath>..\Refrences\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
+    <Reference Include="ITextSharp">
+      <HintPath>..\Refrences\Pdf\ITextSharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\Refrences\log4net.dll</HintPath>
     </Reference>
@@ -57,6 +60,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -89,10 +93,28 @@
     <Compile Include="Plugin\Config\ConfigSection.cs" />
     <Compile Include="Plugin\Config\ConfigUtility.cs" />
     <Compile Include="Plugin\Config\FrameworkConfiguration.cs" />
+    <Compile Include="Plugin\Domain\ADAccountOptions.cs" />
+    <Compile Include="Plugin\Domain\DirectoryObjectType.cs" />
+    <Compile Include="Plugin\Domain\DomainConfiguration.cs" />
+    <Compile Include="Plugin\Domain\DomainOrganizationUnit.cs" />
+    <Compile Include="Plugin\Domain\DomainOrganizationUnitPropertities.cs" />
+    <Compile Include="Plugin\Domain\DomainOrganizationUnitPropertitiesDescription.cs" />
+    <Compile Include="Plugin\Domain\DomainOrganizationUnitUser.cs" />
+    <Compile Include="Plugin\Domain\DomainOrganizationUnitUserCollection.cs" />
+    <Compile Include="Plugin\Domain\DomainUser.cs" />
+    <Compile Include="Plugin\Domain\DomainUserAccountPropertities.cs" />
+    <Compile Include="Plugin\Domain\DomainUserCollection.cs" />
+    <Compile Include="Plugin\Domain\DomainUserPropertities.cs" />
+    <Compile Include="Plugin\Domain\DomainUserPropertitiesDescription.cs" />
+    <Compile Include="Plugin\Domain\DomainUtility.cs" />
+    <Compile Include="Plugin\Domain\ImpersonateUserHelper.cs" />
     <Compile Include="Plugin\Email\ISmtpMail.cs" />
     <Compile Include="Plugin\Email\SmtpEmailAttribute.cs" />
     <Compile Include="Plugin\Email\SmtpMail.cs" />
     <Compile Include="Plugin\Email\SysMailMessage.cs" />
+    <Compile Include="Plugin\Encryption\BigInteger.cs" />
+    <Compile Include="Plugin\Encryption\RSAEncryptDecryptCacheHelper.cs" />
+    <Compile Include="Plugin\Encryption\RSAEncryptDecryptKeyInfo.cs" />
     <Compile Include="Plugin\Logging\CastleLogger.cs" />
     <Compile Include="Plugin\Logging\CastleLoggerFactory.cs" />
     <Compile Include="Plugin\Logging\HostEnvironment.cs" />
@@ -141,6 +163,8 @@
     <Compile Include="Plugin\Email\EmailHelper.cs" />
     <Compile Include="Utility\Byte64.cs" />
     <Compile Include="Utility\DateTimeHelper.cs" />
+    <Compile Include="Utility\EncodingUtility.cs" />
+    <Compile Include="Utility\EncryptUtility.cs" />
     <Compile Include="Utility\EntityUtil.cs" />
     <Compile Include="Utility\FileSystems\FileSystemStorageProvider.cs" />
     <Compile Include="Utility\FileSystems\IStorageFile.cs" />

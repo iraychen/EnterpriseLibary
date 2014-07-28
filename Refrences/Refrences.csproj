@@ -238,6 +238,8 @@
     <Content Include="nunit\runFile.exe" />
     <Content Include="Office\Microsoft.Office.Interop.Word.dll" />
     <Content Include="Office\Microsoft.Office.Interop.Word.xml" />
+    <Content Include="Pdf\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Pdf\ITextSharp.dll" />
     <Content Include="sharpziplib\ICSharpCode.SharpZipLib.dll" />
     <Content Include="sharpziplib\license.txt" />
     <Content Include="specflow\changelog.txt" />
