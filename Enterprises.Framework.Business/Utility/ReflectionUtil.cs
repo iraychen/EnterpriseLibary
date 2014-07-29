@@ -9,7 +9,7 @@ namespace Enterprises.Framework.Utility
     /// <summary>
     /// 反射帮助类
     /// </summary>
-    public class ReflectionUtil
+    public static class ReflectionUtil
     {
         /// <summary>
         ///  获取枚举类型的描述
@@ -132,6 +132,41 @@ namespace Enterprises.Framework.Utility
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// 返回枚举项的描述信息。
+        /// </summary>
+        /// <param name="value">要获取描述信息的枚举项。</param>
+        /// <param name="isTop"></param>
+        /// <returns>枚举想的描述信息。</returns>
+        public static string GetDescription(this Enum value, bool isTop = false)
+        {
+            Type enumType = value.GetType();
+            DescriptionAttribute attr = null;
+            if (isTop)
+            {
+                attr = (DescriptionAttribute)Attribute.GetCustomAttribute(enumType, typeof(DescriptionAttribute));
+            }
+            else
+            {
+                // 获取枚举常数名称。
+                string name = Enum.GetName(enumType, value);
+                if (name != null)
+                {
+                    // 获取枚举字段。
+                    FieldInfo fieldInfo = enumType.GetField(name);
+                    if (fieldInfo != null)
+                    {
+                        // 获取描述的属性。
+                        attr = Attribute.GetCustomAttribute(fieldInfo, typeof(DescriptionAttribute), false) as DescriptionAttribute;
+                    }
+                }
+            }
+
+            if (attr != null && !string.IsNullOrEmpty(attr.Description))
+                return attr.Description;
+            return string.Empty;
         }
     }
 }

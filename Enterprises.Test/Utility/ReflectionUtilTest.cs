@@ -27,6 +27,9 @@ namespace Enterprises.Test.Utility
             {
                 TestContext.WriteLine(string.Format("{0},{1}",item.Key,item.Value));
             }
+
+            var leaveType = LeaveType.Applove;
+            TestContext.WriteLine("GetDescription=" + leaveType.GetDescription());
         }
 
 
