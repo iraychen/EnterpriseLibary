@@ -85,6 +85,7 @@
     <Compile Include="Utility\ReflectTests.cs" />
     <Compile Include="Utility\JsonHelperTest.cs" />
     <Compile Include="Utility\DateTimeHelperTest.cs" />
+    <Compile Include="Utility\EncryptUtilityTest.cs" />
     <Compile Include="Utility\WordHelperTest.cs" />
   </ItemGroup>
   <ItemGroup>
