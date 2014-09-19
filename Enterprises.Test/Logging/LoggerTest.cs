@@ -20,8 +20,9 @@ namespace Enterprises.Test.Logging
             ILogger log = loggerFactory.CreateLogger(typeof(CastleLogger));
             
             log4net.Config.XmlConfigurator.Configure();
-            log.Error("-boom{0}-", 42);
-            log.Warning(new ApplicationException("problem"), "crash");
+            log.Error("-异常输出{0}-", 42);
+            log.Warning(new ApplicationException("测试Warning输出"), "Warning");
+            log.Debug(new Exception("测试Debug输出"), "姚立峰");
             // log4net记录在内存中
             //log4net.Config.BasicConfigurator.Configure(new MemoryAppender());
             //Assert.That(log, Is.Not.Null);
@@ -37,6 +38,15 @@ namespace Enterprises.Test.Logging
             //Assert.That(MemoryAppender.Messages, Has.Some.StringContaining("ApplicationException"));
 
 
+        }
+
+        [Test]
+        public void TestMethod2()
+        {
+            ILogger logger = NullLogger.Instance;
+            logger.Error("测试异常输出.");
+            logger.Warning("测试Warning输出.");
+            logger.Debug("测试Debug输出.");
         }
     }
 

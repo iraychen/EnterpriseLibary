@@ -123,6 +123,7 @@
     <Compile Include="Plugin\Logging\ILoggerFactory.cs" />
     <Compile Include="Plugin\Logging\LoggingExtensions.cs" />
     <Compile Include="Plugin\Logging\LoggingModule.cs" />
+    <Compile Include="Plugin\Logging\LogHelper.cs" />
     <Compile Include="Plugin\Logging\LogLevel.cs" />
     <Compile Include="Plugin\Logging\NullLogger.cs" />
     <Compile Include="Plugin\Logging\NullLoggerFactory.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Utility\HttpPostHelper.cs" />
     <Compile Include="Utility\HttpRequestExtensions.cs" />
     <Compile Include="Utility\ImageUtility.cs" />
+    <Compile Include="Utility\IOHelper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
     <Compile Include="Utility\NumberUtility.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
@@ -189,6 +191,10 @@
     <Compile Include="Plugin\VerifyImage\VerifyImage.cs" />
     <Compile Include="Plugin\VerifyImage\VerifyImageInfo.cs" />
     <Compile Include="Plugin\VerifyImage\VerifyImageProvider.cs" />
+    <Compile Include="Utility\StringHelper.cs" />
+    <Compile Include="Utility\TypeHelper.cs" />
+    <Compile Include="Utility\ValidateHelper.cs" />
+    <Compile Include="Utility\WebHelper.cs" />
     <Compile Include="WinService\RemotingManager.cs" />
     <Compile Include="WinService\WindowsServiceHelper.cs" />
     <Compile Include="WinService\WindowsServiceItemCollection.cs" />
