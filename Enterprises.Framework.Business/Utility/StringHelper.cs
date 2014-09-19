@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -319,6 +320,90 @@ namespace Enterprises.Framework.Utility
         public static string HideMobile(string mobile)
         {
             return mobile.Substring(0, 3) + "*****" + mobile.Substring(8);
+        }
+
+
+        /// <summary>
+        /// 人民币转换
+        /// </summary>
+        /// <param name="moneySource"></param>
+        /// <returns></returns>
+        public static string DoubleToChnMoney(double moneySource)
+        {
+            Int64 money = Convert.ToInt64(moneySource * 100);
+            string[] cstr = { "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };
+            string[] wstr = { "分", "角", "圆", "拾", "佰", "仟", "万", "拾", "佰", "仟", "亿", "拾", "佰", "仟", "兆", "拾", "佰", "仟" };
+            string moneyStr = money.ToString(CultureInfo.InvariantCulture);
+            string bigMoney = "";
+            int di, dj = moneyStr.Length;
+            for (di = 0; di < dj; di++)
+            {
+                int tm = Convert.ToInt16(moneyStr.Substring(dj - di - 1, 1));
+                bigMoney += wstr[di] + cstr[tm];
+            }
+            string bm = string.Empty;
+            foreach (char a in bigMoney.ToCharArray())
+            {
+                bm = a + bm;
+            }
+            for (di = 0; di < dj; di++)
+            {
+                bm = bm.Replace("零仟零佰零拾零圆", "圆");
+                bm = bm.Replace("零仟零佰零拾零万", "万");
+                bm = bm.Replace("零零", "零");
+                bm = bm.Replace("零圆", "圆");
+                bm = bm.Replace("零拾", "零");
+                bm = bm.Replace("零佰", "零");
+                bm = bm.Replace("零仟", "零");
+                bm = bm.Replace("零万", "万");
+                bm = bm.Replace("零亿", "亿");
+                bm = bm.Replace("零角零分", "整");
+                bm = bm.Replace("零分", "");
+                bm = bm.Replace("零角", "");
+            }
+            return bm;
+        }
+
+        /// <summary>
+        /// 人民币转换
+        /// </summary>
+        /// <param name="moneySource"></param>
+        /// <returns></returns>
+        public static string StringToChnMoney(string moneySource)
+        {
+            double tM = Convert.ToDouble(moneySource);
+            Int64 money = Convert.ToInt64(tM * 100);
+            string[] cstr = { "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };
+            string[] wstr = { "分", "角", "圆", "拾", "佰", "仟", "万", "拾", "佰", "仟", "亿", "拾", "佰", "仟", "兆", "拾", "佰", "仟" };
+            string moneyStr = money.ToString(CultureInfo.InvariantCulture);
+            string bigMoney = "";
+            int di, dj = moneyStr.Length;
+            for (di = 0; di < dj; di++)
+            {
+                int tm = Convert.ToInt16(moneyStr.Substring(dj - di - 1, 1));
+                bigMoney += wstr[di] + cstr[tm];
+            }
+            string bm = string.Empty;
+            foreach (char a in bigMoney.ToCharArray())
+            {
+                bm = a + bm;
+            }
+            for (di = 0; di < dj; di++)
+            {
+                bm = bm.Replace("零仟零佰零拾零圆", "圆");
+                bm = bm.Replace("零仟零佰零拾零万", "万");
+                bm = bm.Replace("零零", "零");
+                bm = bm.Replace("零圆", "圆");
+                bm = bm.Replace("零拾", "零");
+                bm = bm.Replace("零佰", "零");
+                bm = bm.Replace("零仟", "零");
+                bm = bm.Replace("零万", "万");
+                bm = bm.Replace("零亿", "亿");
+                bm = bm.Replace("零角零分", "整");
+                bm = bm.Replace("零分", "");
+                bm = bm.Replace("零角", "");
+            }
+            return bm;
         }
     }
 }

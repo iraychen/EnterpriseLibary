@@ -179,6 +179,7 @@
     <Compile Include="Utility\IOHelper.cs" />
     <Compile Include="Utility\JsonHelper.cs" />
     <Compile Include="Utility\NumberUtility.cs" />
+    <Compile Include="Utility\RandomHelper.cs" />
     <Compile Include="Utility\ReadOnlyCollectionExtensions.cs" />
     <Compile Include="Utility\Reflect.cs" />
     <Compile Include="Utility\ReflectionUtil.cs" />

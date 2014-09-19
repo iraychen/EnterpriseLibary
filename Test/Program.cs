@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Enterprises.Framework;
 using Enterprises.Framework.Plugin.Office;
+using Enterprises.Framework.Utility;
 
 
 namespace Test
@@ -148,10 +149,27 @@ namespace Test
             #endregion
 
             #region Word书签转换
-            var wordConvert=new WordConvert();
-            wordConvert.WordConvertTest();
-            Console.WriteLine("word 书签转换成功.");
+            //var wordConvert=new WordConvert();
+            //wordConvert.WordConvertTest();
+            //Console.WriteLine("word 书签转换成功.");
             #endregion
+
+            #region 随机数
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(RandomHelper.CreateRandomValue(4, true));
+                Console.WriteLine(RandomHelper.CreateRandomValue(4, false));
+            }
+
+            Console.WriteLine(RandomHelper.GenerateUniqueId());
+            Console.WriteLine(RandomHelper.GenerateUniqueId());
+            Thread.Sleep(1000);
+            Console.WriteLine(RandomHelper.GenerateUniqueId());
+            Console.WriteLine(RandomHelper.GenerateUniqueId());
+          
+            #endregion
+
             Console.ReadLine();
         }
     }

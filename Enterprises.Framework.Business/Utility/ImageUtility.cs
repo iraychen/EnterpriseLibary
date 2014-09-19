@@ -18,9 +18,7 @@ namespace Enterprises.Framework.Utility
         /// 图像的格式过滤条件
         /// </summary>
         public const string ImageFilter = "图像文件(*.jpg;*.jpeg;*.gif;*.png;*.bmp)|*.jpg;*.jpeg;*.gif;*.png;*.bmp|所有文件(*.*)|*.*";
-
-
-
+        
 		/// <summary>
 		/// 根据指定的文件的扩展名，获取图像的格式
 		/// </summary>
