@@ -20,8 +20,6 @@ namespace Enterprises.Framework.Services
         private readonly object _fTimerServiceObjectsLock = new object();
         private readonly Dictionary<Type, ICommand> _fTimerServiceObjects = new Dictionary<Type, ICommand>();
 
-        private string _fServiceBatch = Guid.NewGuid().ToString().ToUpper();
-
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -43,8 +41,6 @@ namespace Enterprises.Framework.Services
         /// <param name="args"></param>
         protected override void OnStart(string[] args)
         {
-            #region Added By Eric 2012-05-31
-
             if (_fTimerServices.Count == 0)
             {
                 var wsiEmpty = new WindowsServiceItem
@@ -54,11 +50,7 @@ namespace Enterprises.Framework.Services
                     };
                 _fTimerServices.Add(wsiEmpty);
             }
-
-            #endregion
-
-            #region Added By Eric 2012-05-30
-
+            
             var wsi = new WindowsServiceItem
                 {
                     WindowsTimer = new WindowsTimer("默认的一个Command的轮询周期，设置为5秒钟。", 5000),
@@ -66,12 +58,12 @@ namespace Enterprises.Framework.Services
                 };
             _fTimerServices.Add(wsi);
 
-            #endregion
+           
 
             foreach (WindowsServiceItem kvp in _fTimerServices)
             {
-                kvp.WindowsTimer.Timer.Elapsed -= new ElapsedEventHandler(Timer_Elapsed);
-                kvp.WindowsTimer.Timer.Elapsed += new ElapsedEventHandler(Timer_Elapsed);
+                kvp.WindowsTimer.Timer.Elapsed -= Timer_Elapsed;
+                kvp.WindowsTimer.Timer.Elapsed += Timer_Elapsed;
                 kvp.WindowsTimer.Timer.Enabled = true;
             }
            
@@ -81,57 +73,10 @@ namespace Enterprises.Framework.Services
         {
             try
             {
-                if (!_fHasInitServerRemotingObject)
-                {
-                    WindowsServiceItem wsItemTemp = _fTimerServices.GetItemByTimer((Timer)sender);
-                    if (wsItemTemp.CommandType.FullName != typeof(WindowsServiceDefaultCommand).FullName)
-                    {
-                        return;
-                    }
-                }
-
-                #region 判断是否已经初始化，如果没有则进行一次
-
-                if (!_fHasInitServerRemotingObject)
-                {
-                    WindowsServiceItem wsItemTemp = _fTimerServices.GetItemByTimer((Timer)sender);
-
-                    //上一个还没执行完，WindowsServiceDefaultCommand的下一个轮回先返回
-                    if (!wsItemTemp.WindowsTimer.Prepared)
-                    {
-                        return;
-                    }
-                    wsItemTemp.WindowsTimer.Prepared = false;
-
-                    lock (_fHasInitServerRemotingObjectLock)
-                    {
-                        if (!_fHasInitServerRemotingObject)
-                        {
-                            RemotingManager.InitServerRemotingObject();
-                            _fHasInitServerRemotingObject = true;
-                        }
-                    }
-                }
-
-                #endregion
-
-                string batch = Guid.NewGuid().ToString().ToUpper();
-
                 #region 获取Command对象
 
                 WindowsServiceItem wsItem = _fTimerServices.GetItemByTimer((Timer)sender);
                 Type commandType = wsItem.CommandType;
-
-                if (_fHasInitServerRemotingObject)
-                {
-                    if (commandType.FullName == typeof(WindowsServiceDefaultCommand).FullName
-                        || commandType.FullName == typeof(WindowsServiceEmptyCommand).FullName)
-                    {
-                        //已经初始化好了，就不需要这两个了
-                        return;
-                    }
-                }
-
                 ICommand command = null;
                 if (!_fTimerServiceObjects.ContainsKey(commandType))
                 {
@@ -152,14 +97,13 @@ namespace Enterprises.Framework.Services
 
                 #endregion
 
-
                 if (!wsItem.WindowsTimer.Prepared)
                 {
                     return;
                 }
+
                 if (command != null)
                 {
-                   
                     lock (wsItem.WindowsTimer)
                     {
                         try
@@ -169,7 +113,6 @@ namespace Enterprises.Framework.Services
                         }
                         catch (Exception ex)
                         {
-
                             //这里不应该导致整个服务终止，而只是把这个错误信号传递到外面去。
                             if (wsItem.WindowsTimer.CallBack != null)
                             {
@@ -218,9 +161,6 @@ namespace Enterprises.Framework.Services
                         LogHelper.WriteErrorLog(ex.ToString());
                     }
                 }
-
-                
-
             }
             catch (Exception ex)
             {

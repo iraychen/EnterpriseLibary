@@ -196,7 +196,6 @@
     <Compile Include="Utility\TypeHelper.cs" />
     <Compile Include="Utility\ValidateHelper.cs" />
     <Compile Include="Utility\WebHelper.cs" />
-    <Compile Include="WinService\RemotingManager.cs" />
     <Compile Include="WinService\WindowsServiceHelper.cs" />
     <Compile Include="WinService\WindowsServiceItemCollection.cs" />
     <Compile Include="WinService\WindowsServive.cs">

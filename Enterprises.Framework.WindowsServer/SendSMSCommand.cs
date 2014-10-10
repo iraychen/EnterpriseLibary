@@ -12,10 +12,13 @@ namespace Enterprises.Framework.WindowsServer
         Thread _two;
         public void Execute()
         {
-             _one = new Thread(ThreadOne);
-             _two = new Thread(ThreadTwo);
-            _one.Start();
-            _two.Start();
+            // _one = new Thread(ThreadOne);
+            // _two = new Thread(ThreadTwo);
+            //_one.Start();
+            //_two.Start();
+
+            ThreadOne();
+            ThreadTwo();
         }
 
         private void ThreadOne()
@@ -27,7 +30,7 @@ namespace Enterprises.Framework.WindowsServer
                 Thread.Sleep(2000);
             }
 
-            _one.Abort();
+            
         }
 
 
@@ -40,7 +43,7 @@ namespace Enterprises.Framework.WindowsServer
                 Thread.Sleep(5000);
             }
 
-            _two.Abort();
+            
         }
 
 
@@ -60,7 +63,7 @@ namespace Enterprises.Framework.WindowsServer
             try
             {
                 var strW = new StreamWriter(appPath + @"\" + fileName + ".log", true);
-                strW.WriteLine("{0} \r\n",  text);
+                strW.WriteLine("{0},{1} \r\n",  text,DateTime.Now);
                 strW.Flush();
                 strW.Close();
             }
