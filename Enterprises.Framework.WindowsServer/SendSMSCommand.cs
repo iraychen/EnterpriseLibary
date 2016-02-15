@@ -8,20 +8,13 @@ namespace Enterprises.Framework.WindowsServer
 {
     public class SendSmsCommand:ICommand
     {
-        Thread _one;
-        Thread _two;
         public void Execute()
         {
-            // _one = new Thread(ThreadOne);
-            // _two = new Thread(ThreadTwo);
-            //_one.Start();
-            //_two.Start();
-
-            ThreadOne();
-            ThreadTwo();
+            // 服务的业务逻辑核心代码
+            DoSomething();
         }
 
-        private void ThreadOne()
+        private void DoSomething()
         {
             for (int i = 0; i < 10; i++)
             {

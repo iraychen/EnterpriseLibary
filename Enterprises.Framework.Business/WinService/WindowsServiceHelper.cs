@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ServiceProcess;
 using Enterprises.Framework.Utility;
-using Enterprises.Framework.Winservice;
 
 namespace Enterprises.Framework.Services
 {
