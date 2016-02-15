@@ -42,12 +42,13 @@ namespace DocumentConvert.Infrastructure.Model
             }
 
             Word.Row templateRow = table.Rows[2];
-            Word.Row beforeRow = templateRow;
+            object beforeRow = templateRow;
             if (templateRow.Range.Bookmarks.Count == 0)
             {
                 int columnCount = templateRow.Cells.Count + 1, length = dataTable.Rows.Count;
                 for (int index = length - 1; index >= 0; index--)
                 {
+                    
                     Word.Row newRow = table.Rows.Add(beforeRow);
                     for (int i = 1; i < columnCount; i++)
                     {
@@ -75,11 +76,12 @@ namespace DocumentConvert.Infrastructure.Model
 
                     titles.Add(hasBookmark != null ? hasBookmark.Name : string.Empty);
                 }
-                int columnCount = templateRow.Cells.Count + 1, length = dataTable.Rows.Count;
 
-                for (int index = length - 1; index >= 0; index--)
+                int columnCount = templateRow.Cells.Count + 1, length = dataTable.Rows.Count;
+                for (int index = 0; index < length; index++)
                 {
-                    Word.Row newRow = table.Rows.Add(beforeRow);
+
+                    Word.Row newRow = table.Rows.Add(ref beforeRow);
                     for (int i = 1; i < columnCount; i++)
                     {
                         if (!string.IsNullOrEmpty(titles[i - 1]))
@@ -87,7 +89,8 @@ namespace DocumentConvert.Infrastructure.Model
                             newRow.Cells[i].Range.Text = dataTable.Rows[index][titles[i - 1]].ToString();
                         }
                     }
-                    beforeRow = newRow;
+
+                    //beforeRow = newRow;
                 }
             }
 

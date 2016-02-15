@@ -57,7 +57,7 @@ namespace Test
             data.Columns.Add(column);
             var random = new Random();
             double sum = 0.0;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 32; i++)
             {
                 double value = random.NextDouble();
                 DataRow row = data.NewRow();
