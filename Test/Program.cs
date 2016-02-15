@@ -89,7 +89,7 @@ namespace Test
             //{
             //    Console.WriteLine("正确");  
             //}
-         
+
             //Console.WriteLine("bbbbb...........");
             //var b = Kuohaobihe.Check("(a>0)) or ((a<y and ((a>9 or (a<8 and y>8))))");
             //if (b.Count > 0)
@@ -145,28 +145,28 @@ namespace Test
             //    Console.WriteLine("word 保存成功.");
             //    wordHelper.Close();
             //}
-            
+
             #endregion
 
             #region Word书签转换
-            //var wordConvert=new WordConvert();
-            //wordConvert.WordConvertTest();
-            //Console.WriteLine("word 书签转换成功.");
+            var wordConvert = new WordConvert();
+            wordConvert.WordConvertTest();
+            Console.WriteLine("word 书签转换成功.");
             #endregion
 
             #region 随机数
 
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(RandomHelper.CreateRandomValue(4, true));
-                Console.WriteLine(RandomHelper.CreateRandomValue(4, false));
-            }
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine(RandomHelper.CreateRandomValue(4, true));
+            //    Console.WriteLine(RandomHelper.CreateRandomValue(4, false));
+            //}
 
-            Console.WriteLine(RandomHelper.GenerateUniqueId());
-            Console.WriteLine(RandomHelper.GenerateUniqueId());
-            Thread.Sleep(1000);
-            Console.WriteLine(RandomHelper.GenerateUniqueId());
-            Console.WriteLine(RandomHelper.GenerateUniqueId());
+            //Console.WriteLine(RandomHelper.GenerateUniqueId());
+            //Console.WriteLine(RandomHelper.GenerateUniqueId());
+            //Thread.Sleep(1000);
+            //Console.WriteLine(RandomHelper.GenerateUniqueId());
+            //Console.WriteLine(RandomHelper.GenerateUniqueId());
           
             #endregion
 

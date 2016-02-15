@@ -70,18 +70,18 @@ namespace Enterprises.Framework.Plugin.Office.Converters
                 doc.Status = (int)DocumentStatus.Processed;
                 doc.InfoMessage = string.Empty;
 
-                var result = DocumentService.Instance.UpdateDocument(doc);
-                if (result == null)
-                {
-                    WriteLog("更新数据库状态失败！");
-                }
+                //var result = DocumentService.Instance.UpdateDocument(doc);
+                //if (result == null)
+                //{
+                //    WriteLog("更新数据库状态失败！");
+                //}
             }
             catch (Exception ex)
             {
                 doc.InfoMessage = ex.ToString();
                 doc.Status = (int)DocumentStatus.Failed;
                 WriteLog(ex.ToString());
-                DocumentService.Instance.UpdateDocument(doc);
+                //DocumentService.Instance.UpdateDocument(doc);
             }
             finally
             {

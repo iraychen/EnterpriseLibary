@@ -137,7 +137,7 @@ namespace Enterprises.Framework.Utility
         /// <summary>
         /// 返回枚举项的描述信息。
         /// </summary>
-        /// <param name="value">要获取描述信息的枚举项。</param>
+        /// <param name="value">要获取描述信息的枚举项。即Description标签属性</param>
         /// <param name="isTop"></param>
         /// <returns>枚举想的描述信息。</returns>
         public static string GetDescription(this Enum value, bool isTop = false)
@@ -168,5 +168,29 @@ namespace Enterprises.Framework.Utility
                 return attr.Description;
             return string.Empty;
         }
+
+
+        /// <summary>
+        /// 判断属性的注释
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="cName">属性名</param>
+        /// <returns></returns>
+        public static string GetContent<T>(string cName)
+        {
+            Type type = typeof(T);
+            PropertyInfo[] propertys = type.GetProperties();
+            foreach (PropertyInfo property in propertys)
+            {
+                if (property.Name == cName)
+                {
+                    var ca= property.GetCustomAttributes(false);
+
+                }
+            }
+
+            return "";
+        }
+
     }
 }

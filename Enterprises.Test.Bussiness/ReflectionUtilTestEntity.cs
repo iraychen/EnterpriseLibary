@@ -8,6 +8,9 @@ namespace Enterprises.Test.Bussiness
 {
     public class ReflectionUtilTestEntity : IReflectionUtilTest
     {
+        /// <summary>
+        ///  注释说明相关信息哦.
+        /// </summary>
         [YaolifengTest("姚立峰")]
         public string Name { get; set; }
         public Guid Id { get; set; }
