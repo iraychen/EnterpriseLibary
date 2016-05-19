@@ -122,6 +122,7 @@
     <Compile Include="SingleTon.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="ThreadDemo.cs" />
+    <Compile Include="ThreadTest\FunTest.cs" />
     <Compile Include="WordConvert.cs" />
   </ItemGroup>
   <ItemGroup>

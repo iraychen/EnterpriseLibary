@@ -194,6 +194,7 @@
     <Compile Include="Plugin\VerifyImage\VerifyImageProvider.cs" />
     <Compile Include="Utility\StringHelper.cs" />
     <Compile Include="Utility\TypeHelper.cs" />
+    <Compile Include="Utility\Utils.cs" />
     <Compile Include="Utility\ValidateHelper.cs" />
     <Compile Include="Utility\WebHelper.cs" />
     <Compile Include="WinService\WindowsServiceHelper.cs" />

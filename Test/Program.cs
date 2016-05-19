@@ -10,6 +10,7 @@ using System.Data;
 using Enterprises.Framework;
 using Enterprises.Framework.Plugin.Office;
 using Enterprises.Framework.Utility;
+using Test.ThreadTest;
 
 
 namespace Test
@@ -149,9 +150,9 @@ namespace Test
             #endregion
 
             #region Word书签转换
-            var wordConvert = new WordConvert();
-            wordConvert.WordConvertTest();
-            Console.WriteLine("word 书签转换成功.");
+            //var wordConvert = new WordConvert();
+            //wordConvert.WordConvertTest();
+            //Console.WriteLine("word 书签转换成功.");
             #endregion
 
             #region 随机数
@@ -167,7 +168,19 @@ namespace Test
             //Thread.Sleep(1000);
             //Console.WriteLine(RandomHelper.GenerateUniqueId());
             //Console.WriteLine(RandomHelper.GenerateUniqueId());
+
+            #endregion
+
+            #region 委托相关特效
+            var funtest = new FunTest();
+            Func<int, int, int> add = (a, b) => a + b;
+
+            var result=funtest.Jisuan(add,1,3);
+            Console.WriteLine(result);
+            Console.WriteLine(funtest.Jisuan((a, b) => a - b, 5, 4));
           
+            var ss=funtest.CreateExcute(p=>p>3,(a,b)=>a+b);
+            Console.WriteLine(ss);
             #endregion
 
             Console.ReadLine();
